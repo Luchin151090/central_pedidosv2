@@ -3,17 +3,24 @@ import { createRouter, createWebHistory } from 'vue-router';
 //import About from '../views/About.vue'; // Asegúrate de tener este componente
 import HelloWorld from '@/components/HelloWorld.vue';
 import Login from '@/components/LoginVue.vue';
+import DashboardVue from '@/components/DashboardVue.vue';
+import DashboardVue2 from '@/components/DashboardVue2.vue';
 const routes = [
   {
     path: '/',
     name: 'LoginForm',
     component: Login
   },
-  /*{
-    path: '/about',
-    name: 'About',
-    component: About
-  }*/
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: DashboardVue
+  },
+  {
+    path: '/dashboard2',
+    name: 'Dashboard2',
+    component: DashboardVue2
+  }
 ];
 
 const router = createRouter({

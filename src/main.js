@@ -7,6 +7,7 @@ import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import router from './router'
+import store from './storevuex'
 // Components
 import App from './App.vue'
 import '@mdi/font/css/materialdesignicons.css' 
@@ -26,4 +27,5 @@ const vuetify = createVuetify({
 createApp(App)
 .use(vuetify)
 .use(router)
+.use(store)
 .mount('#app')
