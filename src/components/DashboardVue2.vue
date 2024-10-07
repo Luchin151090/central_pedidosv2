@@ -9,7 +9,7 @@
         </v-row>
         <v-row>
             <v-col cols="12" md="4" lg="4">
-                <v-card elevation="8" style="background-color:green;" class="tarjetas-headers">
+                <v-card elevation="8" style="background-color:royalblue;" class="tarjetas-headers">
                     <v-card-title style="color:white;font-weight:bold">
                         Entregados
                     </v-card-title>
@@ -30,7 +30,7 @@
                 </v-card>
             </v-col>
             <v-col cols="12" md="4" lg="4">
-                <v-card elevation="8" style="background-color:orange;" class="tarjetas-headers">
+                <v-card elevation="8" style="background-color:cadetblue;" class="tarjetas-headers">
                     <v-card-title style="color:white; font-weight:bold;">
                         Procesos
                     </v-card-title>
@@ -49,7 +49,7 @@
                 </v-card>
             </v-col>
             <v-col cols="12" md="4" lg="4">
-                <v-card elevation="8" class="tarjetas-headers bg-indigo">
+                <v-card elevation="8" style="background-color:darkseagreen;">
                     <v-card-title style="color:white;font-weight:bold;">
                         Pendientes
                     </v-card-title>
@@ -84,7 +84,7 @@
                 <v-card elevation="8" class="clientes">
                    
                         <v-data-table
-                          
+                          style="background-color:steelblue; color:white"
                           :headers="headers"
                           :items="items"
                           item-key="name"
@@ -98,7 +98,7 @@
                 </v-card>
             </v-col>
             <v-col cols="3">
-                <v-card elevation="8" class="montotarjeta bg-deep-purple-lighten-1">
+                <v-card elevation="8" class="montotarjeta" style="background-color:cadetblue;">
                     <v-card-title>
                         Monto Entregados
                     </v-card-title>
@@ -107,7 +107,7 @@
                 </v-card>
             </v-col>
             <v-col cols="3">
-                <v-card elevation="8" class="montotarjeta" style="background-color: dodgerblue;">
+                <v-card elevation="8" class="montotarjeta" style="background-color:cadetblue;">
                     <v-card-title>
                         Monto Pendientes
                     </v-card-title>
@@ -132,6 +132,7 @@
             <v-col cols="6">
                 <v-card elevation="8">
                     <v-data-table
+                    class="tablacond"
                     :headers="headers"
                     :items="items"
                     item-key="name"
@@ -143,6 +144,8 @@
             <v-col cols="6">
                 <v-card elevation="8">
                     <v-data-table
+
+                    class="tablacond"
                     :headers="headers"
                     :items="items"
                     item-key="name"
@@ -163,15 +166,13 @@ export default{
                 { title: 'Pyramid', value: 'name' },
                 { title: 'Location', value: 'location' },
                 { title: 'Construction Date', value: 'constructionDate' },
-                {
-                    title: 'Dimensions',
-                    align: 'center',
-                    children: [
+                
+                   
                         { title: 'Height (m)', value: 'height' },
                         { title: 'Base (m)', value: 'base' },
                         { title: 'Volume (m³)', value: 'volume' },
-                    ],
-                },
+                 
+                
             ],
             items: [
                 {
@@ -236,6 +237,10 @@ export default{
 }
 </script>
 <style scoped>
+.tablacond{
+    background-color: #404549;
+    color:white;   
+}
 .tarjetatexto {
     font-size: 45px;
     text-align: end;

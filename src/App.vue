@@ -1,43 +1,63 @@
 <template>
   <v-app>
     <!-- Drawer y App Bar -->
-    <v-navigation-drawer class="bg-indigo" app>
-      <div class="circle-container">
-        <div class="cajaimagen">
-            <v-img :src="require('@/assets/nuevito.png')" class="imgcircle"></v-img>
 
+    <v-navigation-drawer class="barracolor" app>
+      <div class="contenedor">
+        <div class="hijo">
+          <v-img :src="require('@/assets/nuevito.png')" ></v-img>
         </div>
-    </div>
+      </div>
 
-    <v-list nav>
-        <div class="cajablanco">
-            <p>Bienvenid@ Jorge a<br>Sol Vida </p>
-        </div>
+
+      
+     
+      <div class="cajablanco">
+        <v-row>
+          <v-col cols="6">
+            <div class="imgcircle">
+              <v-img :src="require('@/assets/nuevito.png')" ></v-img>
+            </div>
+          </v-col>
+          <v-col cols="6" class="d-flex align-center justify-center">
+            <p>Antonio Jorge</p>
+          </v-col>
+        </v-row>
+        
+      </div>
+      
+      <v-list nav>
+
+
         <v-list-item prepend-icon="mdi-home" title="Inicio" value="inicio"></v-list-item>
         <v-list-item prepend-icon="mdi-file-account-outline" title="Gestión" value="gestion"></v-list-item>
-        <v-list-item prepend-icon="mdi-account-supervisor-circle" title="Supervisión"
-            value="supervisors"></v-list-item>
+        <v-list-item prepend-icon="mdi-account-supervisor-circle" title="Supervisión" value="supervisors"></v-list-item>
         <v-list-item prepend-icon="mdi-motorbike" title="Ruteo" value="clockin"></v-list-item>
-    </v-list>
+
+        <v-list-item prepend-icon="mdi-door" title="Salir" value="salir"></v-list-item>
+      </v-list>
     </v-navigation-drawer>
-   
+
 
     <!-- Aquí dentro el contenido dinámico -->
-    <v-main>
-      
-        <router-view></router-view>
-      
+    <DashboardVue v-if="this.$router.currentRoute.name !== 'LoginForm'" />
+    <v-main class="ma-3">
+
+      <router-view></router-view>
+
     </v-main>
   </v-app>
 </template>
 
 <script>
+import DashboardVue from './components/DashboardVue.vue';
+
 //import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-   // HelloWorld
+    // HelloWorld
   }
 }
 </script>
@@ -49,12 +69,39 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
- /* margin-top: 60px;*/
+  /* margin-top: 60px;*/
 }
+.contenedor {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hijo {
+  width: 100px;
+  height: 100px;
+ 
+ 
+}
+
 .imgcircle {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+height: 80px;
+width: 80px;
+ border-radius: 50%;
+  background-color: rgb(63, 65, 87);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:10px;
+
+
+}
+
+
+.barracolor {
+  background-color: #292e33;
+  color: white;
 }
 
 .cajaimagen {
@@ -69,9 +116,8 @@ export default {
 }
 
 .cajablanco {
-  height: 200px;
-  /*background-color: white;*/
-  width: 100%;
+ padding-left: 20px;
+ padding-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
