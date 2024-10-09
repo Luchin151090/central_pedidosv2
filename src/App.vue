@@ -16,7 +16,7 @@
         <v-row>
           <v-col cols="6">
             <div class="imgcircle">
-              <v-img :src="require('@/assets/nuevito.png')" ></v-img>
+             <v-icon icon="mdi-account" size="large" color="blue"></v-icon>
             </div>
           </v-col>
           <v-col cols="6" class="d-flex align-center justify-center">
@@ -40,7 +40,7 @@
 
 
     <!-- Aquí dentro el contenido dinámico -->
-    <DashboardVue v-if="this.$router.currentRoute.name !== 'LoginForm'" />
+    <InicioVue v-if="this.$router.currentRoute.name !== 'LoginForm'" />
     <v-main class="ma-3">
 
       <router-view></router-view>
@@ -50,14 +50,15 @@
 </template>
 
 <script>
-import DashboardVue from './components/DashboardVue.vue';
 
-//import HelloWorld from './components/HelloWorld.vue'
+import InicioVue from './components/InicioVue.vue';
+
+
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    
   }
 }
 </script>

@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 //import Home from '../views/Home.vue'; // Asegúrate de tener este componente
 //import About from '../views/About.vue'; // Asegúrate de tener este componente
-import HelloWorld from '@/components/HelloWorld.vue';
+
 import Login from '@/components/LoginVue.vue';
-import DashboardVue from '@/components/DashboardVue.vue';
-import DashboardVue2 from '@/components/DashboardVue2.vue';
+
+import InicioVue from '@/components/InicioVue.vue';
+import GestionVue from '@/components/GestionVue.vue';
 const routes = [
   {
     path: '/',
@@ -12,14 +13,14 @@ const routes = [
     component: Login
   },
   {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: DashboardVue
+    path: '/gestion',
+    name: 'Gestion',
+    component: GestionVue
   },
   {
-    path: '/dashboard2',
-    name: 'Dashboard2',
-    component: DashboardVue2
+    path: '/home',
+    name: 'Inicio',
+    component: InicioVue
   }
 ];
 

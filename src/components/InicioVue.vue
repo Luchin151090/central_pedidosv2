@@ -159,7 +159,7 @@
   
 <script>
 export default{
-    name:'Dashboard2',
+    name:'Inicio',
     data(){
         return{
             headers: [
