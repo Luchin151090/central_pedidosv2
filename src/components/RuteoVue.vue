@@ -1,25 +1,62 @@
 <template>
-    <v-row ml-3>
-        <v-card elevation="6" title="Pedidos" flat>
-            <template v-slot:text>
-                <v-text-field
-                 v-model="search"
-                  label="Search"
-                   prepend-inner-icon="mdi-magnify"
-                    variant="outlined"
-                    hide-details
-                     single-line>
-                    </v-text-field>
-            </template>
-    
-            <v-data-table
-             v-model="selected"
-              :items="desserts"
-              :search="search"
-               item-value="name"
-                show-select>
-            </v-data-table>
+    <v-row>
+        <v-col cols="6">
+            <v-card elevation="6" title="Pedidos" flat>
+                <template v-slot:text>
+                    <v-text-field
+                     v-model="search"
+                      label="Search"
+                       prepend-inner-icon="mdi-magnify"
+                        variant="outlined"
+                        hide-details
+                         single-line>
+                        </v-text-field>
+                </template>
+        
+                <v-data-table
+                 v-model="selected"
+                  :items="desserts"
+                  :search="search"
+                   item-value="name"
+                   items-per-page="5"
+                    show-select>
+                </v-data-table>
+            </v-card>
+        </v-col>
+        <v-col cols="6">
+            <v-card elevation="6" title="Conductores" flat>
+                <template v-slot:text>
+                    <v-text-field
+                     v-model="search"
+                      label="Search"
+                       prepend-inner-icon="mdi-magnify"
+                        variant="outlined"
+                        hide-details
+                         single-line>
+                        </v-text-field>
+                </template>
+        
+                <v-data-table
+                 v-model="selected"
+                  :items="desserts"
+                  :search="search"
+                   item-value="name"
+                   items-per-page="5"
+                    show-select>
+                </v-data-table>
+            </v-card>
+        </v-col>
+       
+    </v-row>
+    <v-row>
+        <v-card>
+            <v-card-title>
+                Mapa
+            </v-card-title>
         </v-card>
+    </v-row>
+    <v-row>
+       <v-btn>Crear ruta</v-btn>
     </v-row>
     
 </template>
