@@ -6,6 +6,7 @@ import Login from '@/components/LoginVue.vue';
 
 import InicioVue from '@/components/InicioVue.vue';
 import GestionVue from '@/components/GestionVue.vue';
+import RuteoVue from '@/components/RuteoVue.vue';
 const routes = [
   {
     path: '/',
@@ -21,7 +22,13 @@ const routes = [
     path: '/home',
     name: 'Inicio',
     component: InicioVue
+  },
+  {
+    path:'/ruta',
+    name: 'Ruta',
+    component:RuteoVue
   }
+
 ];
 
 const router = createRouter({
