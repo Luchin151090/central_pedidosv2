@@ -25,7 +25,7 @@
         <v-row>
             <v-col cols="12" md="12" lg="12">
                 <v-card>
-                    <v-stepper v-model="activeStep" :items="['Cliente - Ubicación', 'Productos']">
+                    <v-stepper v-model="activeStep" :items="['Cliente - Ubicación', 'Productos','']">
                         <!-- Contenido del primer paso -->
                         <template v-slot:[`item.1`]>
 
@@ -194,7 +194,7 @@
 
                         <template v-slot:next="">
                             <v-btn text @click="nexts">
-                                {{ activeStep === 2 ? 'REGISTRAR PEDIDO' : 'Siguiente' }}
+                                {{ activeStep === 2  ? 'REGISTRAR PEDIDO' : 'Siguiente' }}
                             </v-btn>
                         </template>
                     </v-stepper>
