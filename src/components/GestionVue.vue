@@ -74,44 +74,118 @@
                         <!-- Contenido del segundo paso -->
                         <template v-slot:[`item.2`]>
                             <v-card elevation="6">
-                                <v-row>
-                                    <v-slide-group v-model="model" class="pa-4" selected-class="bg-success" show-arrows>
-                                        <v-slide-group-item v-for="n in 5" :key="n"
-                                            v-slot="{ isSelected, toggle, selectedClass }">
-                                            <v-card :class="['ma-4', selectedClass]" color="grey-lighten-1" height="200"
-                                                width="100" @click="toggle">
-                                                <div class="d-flex fill-height align-center justify-center">
-                                                    <v-scale-transition>
-                                                        <v-icon v-if="isSelected" color="white"
-                                                            icon="mdi-close-circle-outline" size="48"></v-icon>
-                                                    </v-scale-transition>
-                                                </div>
-                                            </v-card>
-                                        </v-slide-group-item>
-                                    </v-slide-group>
+                                <v-row class="mb-5">
+                                    <v-card>
+                                        <v-slide-group v-model="model" class="pa-4" selected-class="bg-success"
+                                            show-arrows>
+                                            <v-slide-group-item v-for="n in 5" :key="n">
+                                                <v-card class="mx-auto mb-5 ml-5 pa-3" max-width="400" min-width="300">
+                                                    <v-img class="align-end text-white" height="200"
+                                                        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover>
+
+                                                    </v-img>
+
+                                                    <v-card-subtitle class="pt-4">
+                                                        Botella 700 ml
+                                                    </v-card-subtitle>
+
+                                                    <v-card-text>
+                                                        <div>S/. 12.00</div>
+
+                                                        <div>UND</div>
+                                                    </v-card-text>
+
+                                                    <v-card-actions class="d-flex justify-center">
+                                                        <v-btn icon="mdi-plus"></v-btn>
+                                                        <p>2</p>
+                                                        <v-btn icon="mdi-minus"></v-btn>
+                                                    </v-card-actions>
+                                                    <v-text-field label="S/. Descuento" prefix="S/."></v-text-field>
+                                                    <v-btn @click="dialog = true">Confirmar</v-btn>
+
+                                                    
+
+                                                </v-card>
+                                            </v-slide-group-item>
+                                        </v-slide-group>
+                                    </v-card>
+                                    <v-dialog v-model="dialog" width="auto">
+                                        <v-card min-width="400" prepend-icon="mdi-account"
+                                           >
+                                            <v-text-field
+                                            label="Autorizado por:">
+
+                                            </v-text-field>
+                                            <v-text-field
+                                            label="Cargo:">
+
+                                            </v-text-field>
+                                            <template v-slot:actions>
+                                                <v-btn class="ms-auto" text="Ok"
+                                                    @click="dialog = false"></v-btn>
+                                            </template>
+                                        </v-card>
+                                    </v-dialog>
                                 </v-row>
-                                <v-row>
-                                    <v-slide-group v-model="model1" class="pa-4" selected-class="bg-success" show-arrows>
-                                        <v-slide-group-item v-for="n in 5" :key="n"
-                                            v-slot="{ isSelected, toggle, selectedClass }">
-                                            <v-card :class="['ma-4', selectedClass]" color="grey-lighten-1" height="200"
-                                                width="100" @click="toggle">
-                                                <div class="d-flex fill-height align-center justify-center">
-                                                    <v-scale-transition>
-                                                        <v-icon v-if="isSelected" color="white"
-                                                            icon="mdi-close-circle-outline" size="48"></v-icon>
-                                                    </v-scale-transition>
-                                                </div>
-                                            </v-card>
-                                        </v-slide-group-item>
-                                    </v-slide-group>
+                                <v-row class="mb-5">
+                                    <v-card>
+                                        <v-slide-group v-model="model" class="pa-4" selected-class="bg-success"
+                                            show-arrows>
+                                            <v-slide-group-item v-for="n in 5" :key="n">
+                                                <v-card class="mx-auto mb-5 ml-5 pa-3" max-width="400" min-width="300">
+                                                    <v-img class="align-end text-white" height="200"
+                                                        src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover>
+
+                                                    </v-img>
+
+                                                    <v-card-subtitle class="pt-4">
+                                                        Botella 700 ml
+                                                    </v-card-subtitle>
+
+                                                    <v-card-text>
+                                                        <div>S/. 12.00</div>
+
+                                                        <div>UND</div>
+                                                    </v-card-text>
+
+                                                    <v-card-actions class="d-flex justify-center">
+                                                        <v-btn icon="mdi-plus"></v-btn>
+                                                        <p>2</p>
+                                                        <v-btn icon="mdi-minus"></v-btn>
+                                                    </v-card-actions>
+                                                    <v-text-field label="S/. Descuento" prefix="S/."></v-text-field>
+                                                    <v-btn @click="dialog = true">Confirmar</v-btn>
+
+                                                    
+
+                                                </v-card>
+                                            </v-slide-group-item>
+                                        </v-slide-group>
+                                    </v-card>
+                                    <v-dialog v-model="dialog" width="auto">
+                                        <v-card min-width="400" prepend-icon="mdi-account"
+                                           >
+                                            <v-text-field
+                                            label="Autorizado por:">
+
+                                            </v-text-field>
+                                            <v-text-field
+                                            label="Cargo:">
+
+                                            </v-text-field>
+                                            <template v-slot:actions>
+                                                <v-btn class="ms-auto" text="Ok"
+                                                    @click="dialog = false"></v-btn>
+                                            </template>
+                                        </v-card>
+                                    </v-dialog>
                                 </v-row>
-                                   
-                               
+
+
                             </v-card>
                         </template>
 
-                       
+
 
                         <!-- Customización de botones -->
                         <template v-slot:prev="">
@@ -119,7 +193,9 @@
                         </template>
 
                         <template v-slot:next="">
-                            <v-btn text @click="nexts">Siguiente</v-btn>
+                            <v-btn text @click="nexts">
+                                {{ activeStep === 2 ? 'REGISTRAR PEDIDO' : 'Siguiente' }}
+                            </v-btn>
                         </template>
                     </v-stepper>
 
@@ -137,15 +213,14 @@ export default {
     name: 'Gestion',
     data() {
         return {
-            model:null,
-            model1:null,
+            dialog: false,
+            model: null,
+            model1: null,
             activeStep: 1,
             headers: [
                 { title: 'Pyramid', value: 'name' },
                 { title: 'Location', value: 'location' },
                 { title: 'Construction Date', value: 'constructionDate' },
-
-
                 { title: 'Height (m)', value: 'height' },
                 { title: 'Base (m)', value: 'base' },
                 { title: 'Volume (m³)', value: 'volume' },
@@ -213,18 +288,28 @@ export default {
         }
     },
     methods: {
-        prevs() {
-            if (this.activeStep > 1) {
-                this.activeStep--;
-            }
-
-        },
-        nexts() {
-            if (this.activeStep < 3) {
-                this.activeStep++;
-            }
+    prevs() {
+        if (this.activeStep > 1) {
+            this.activeStep--;
         }
+    },
+    nexts() {
+        if (this.activeStep === 2) {
+            // Aquí ejecutas la lógica para registrar el pedido
+            console.log('Pedido registrado');
+            // Por ejemplo, puedes enviar los datos al servidor o realizar otra acción
+            this.registrarPedido();
+        } else {
+            this.activeStep++;
+        }
+    },
+    registrarPedido() {
+        // Lógica para registrar el pedido
+        alert('Pedido registrado con éxito!');
+        // Resetea el formulario o realiza la acción que desees después de registrar
     }
+}
+
 }
 </script>
 <style scoped></style>
